@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  ros2:
+    image: osrf/ros:humble-desktop-full
+    container_name: ros-ros2
+    environment:
+      DISPLAY: host.docker.internal:0.0
+    ports:
+      - "10000:10000"
+    volumes:
+      - ./ros2_ws:/root/ros2_ws     # 👈 Mount local folder into container
+    working_dir: /root/ros2_ws
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/bash
