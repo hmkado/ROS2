@@ -1,7 +1,6 @@
-version: "3.8"
-
 services:
   ros2:
+    build: .
     image: osrf/ros:humble-desktop-full
     container_name: ros-ros2
     environment:
