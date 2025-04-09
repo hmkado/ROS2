@@ -1,3 +1,5 @@
-Build: docker-compose -f ros.yml up --build -d
+Build: docker-compose -f ros.yml up --build
 Run: docker exec -it ros-ros2 bash
-source: source /opt/ros/humble/setup.bash
+Source: source /opt/ros/humble/setup.bash
+
+Resolve Dependencies: rosdep install -i --from-path src --rosdistro humble -y
